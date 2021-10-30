@@ -9,7 +9,7 @@ const Booking = () => {
     const [place, setPlace] = useState({})
     const history = useHistory()
     useEffect(() => {
-        fetch(`http://localhost:5000/places/${id}`)
+        fetch(`https://warm-plateau-98820.herokuapp.com/places/${id}`)
         .then(res => res.json())
         .then(data => setPlace(data))
     },[id])
@@ -27,7 +27,7 @@ const Booking = () => {
             date : place?.date,
             tourTime: place?.tourDuration
         }
-        fetch(`http://localhost:5000/booking`, {
+        fetch(`https://warm-plateau-98820.herokuapp.com/booking`, {
             method : 'POST',
             headers : {
                 "content-type" : "application/json"
@@ -60,6 +60,8 @@ const Booking = () => {
                         <Card.Text>
                         {place.details}
                         </Card.Text>
+                        <input  className='mb-3 w-75'  value={user?.displayName} type="text"  placeholder='Your Name' />
+                        <input  className='mb-3 w-75' value={user?.email}  type="email" placeholder='Your Number' />
                         <input ref = {addressRef} className='mb-3 w-75' required type="text"  placeholder='Your Address' />
                         <input ref={numberRef} className='mb-3 w-75' required type="number" placeholder='Your Number' />
                         <div className="book">

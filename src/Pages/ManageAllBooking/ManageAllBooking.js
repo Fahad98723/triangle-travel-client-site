@@ -4,7 +4,7 @@ import { Container, Table } from 'react-bootstrap';
 const ManageAllBooking = () => {
     const [allBooking, setAllBooking] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/booking')
+        fetch('https://warm-plateau-98820.herokuapp.com/booking')
         .then(res => res.json())
         .then(data => setAllBooking(data))
     },[allBooking])
@@ -12,7 +12,7 @@ const ManageAllBooking = () => {
         console.log(id);
         const confirm = window.confirm('Are you sure about this ?')
         if (confirm) {
-            fetch(`http://localhost:5000/booking/${id}`, {
+            fetch(`https://warm-plateau-98820.herokuapp.com/booking/${id}`, {
             method : "DELETE",
         })
         .then(res => res.json())
@@ -32,7 +32,7 @@ const ManageAllBooking = () => {
         const itemUpdate = {...item}
         itemUpdate.status = "approved"
         console.log(itemUpdate);
-        fetch(`http://localhost:5000/booking/${id}`, {
+        fetch(`https://warm-plateau-98820.herokuapp.com/booking/${id}`, {
             method : "PUT",
             headers : {
                 "content-type" : "application/json"
@@ -41,18 +41,20 @@ const ManageAllBooking = () => {
         })
     }
     return (
-        <div className='py-5'>
+        <div className='py-5 '>
             <Container>
                 <div className="heading mb-5">
-                    <h3>Manage Your Booking Here</h3>
-                    <h1>Manage Booking</h1>
+                    <h3>Manage All Bookings Here</h3>
+                    <h1>All Booking</h1>
                 </div>
-            <Table striped bordered hover variant="dark">
+                <div className='overflow-auto'>
+                <Table striped bordered hover variant="dark" >
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Place</th>
+                    <th>Adress</th>
+                    <th>Tour Place</th>
                     <th>Date</th>
                     <th>Duration</th>
                     <th>Status</th>
@@ -65,17 +67,18 @@ const ManageAllBooking = () => {
                    <tr>
                         <td>{booking.name}</td>
                         <td>{booking.email}</td>
+                        <td>{booking.address}</td>
                         <td>{booking.place}</td>
                         <td>{booking.date}</td>
-                        <td>{booking.duration}</td>
+                        <td>{booking.duration} Day</td>
                         <td>{booking.status} {booking.status === 'Pending' && <i onClick={() => handleStatus(booking._id)} className=" ms-4 fas fa-check-circle fs-4"></i>}</td>
-                        <div className="d-flex justify-content-center">
-                            <td><i onClick={() => handleDelete(booking._id)} className="fas fa-trash-alt "></i></td>
-                        </div>
+                        <td className="text-center"><i onClick={() => handleDelete(booking._id)} className="fas fa-trash-alt"></i></td>
                     </tr>)
                }
             </tbody>
             </Table>
+                </div>
+            
             </Container>
         </div>
     );

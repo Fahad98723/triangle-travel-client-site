@@ -21,7 +21,7 @@ const Header = () => {
                  <Nav.Link as={Link} to="/booking">Destinations</Nav.Link>
                  {
                      user?.email || user?.displayName ? <>
-                     <Nav.Link as={Link} to="/contact">My Booking</Nav.Link>
+                     <Nav.Link as={Link} to="/myBooking">My Booking</Nav.Link>
                      <Nav.Link as={Link} to="/manageAllBooking">Manage All Booking</Nav.Link>
                      <Nav.Link as={Link} to="/AddNewDestination">Add New Destination</Nav.Link>  </> : ''
                      

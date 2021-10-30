@@ -5,14 +5,18 @@ import Place from '../Place/Place';
 
 const Places = () => {
     const [places,setPlaces] = useState([])
-    const {isLoading} = useAuth()
+    const {isLoading,setIsLoading} = useAuth()
     useEffect(() => {
-        fetch('http://localhost:5000/places')
+        fetch('https://warm-plateau-98820.herokuapp.com/places')
         .then(res => res.json())
         .then(data => {
+            setIsLoading(true)
             setPlaces(data)
         })
-    },[places])
+        .finally(() => {
+            setIsLoading(false)
+        })
+    },[places,setIsLoading])
     if(isLoading){
         return <Spinner className = 'd-block mx-auto' animation="border" variant="danger" />
     }

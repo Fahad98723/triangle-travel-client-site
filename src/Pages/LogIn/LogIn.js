@@ -49,6 +49,10 @@ const Login = () => {
     }
     return (
         <Container className= 'text-center py-5'>
+            <div className="heading mb-5">
+                <h3>Login with your social site</h3>
+                <h1>Please log in</h1>
+            </div>
             <h5 className='text-danger mt-2'>{error}</h5>
             <div className="d-flex justify-content-center">
                 <div>

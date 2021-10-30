@@ -14,6 +14,7 @@ import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import ManageAllBooking from './Pages/ManageAllBooking/ManageAllBooking';
 import Footer from './Pages/Shared/Footer/Footer';
 import AuthProvider from './Context/AuthProvider';
+import MyBooking from './Pages/MyBooking/MyBooking';
 function App() {
   return (
     <div className="body">
@@ -35,6 +36,9 @@ function App() {
             </Route>
             <Route path='/manageAllBooking'>
               <ManageAllBooking></ManageAllBooking>
+            </Route>
+            <Route path='/myBooking'>
+              <MyBooking></MyBooking>
             </Route>
             <PrivateRoute  path='/booking/:id'>
               <Booking></Booking>
