@@ -1,0 +1,27 @@
+.navigation-bar, .footer-section{
+    background:#FDD20EFF;
+    color: #00203FFF;
+}
+
+.footer-section h3 {
+    font-family: 'Griffy', cursive;
+    font-size: 25px;
+    font-weight: 900;
+}
+.navigation-bar h6 {
+    color: #00203FFF;
+    font-family: 'Griffy', cursive;
+    font-size: 19px;
+}
+.logo{
+    font-family: 'Henny Penny', cursive;
+    font-weight: 900;
+    font-size: 30px;
+}
+.menu a {
+    font-size: 19px;
+    font-weight: 900;
+    color: #00203FFF;
+   /* font-family: 'Fruktur', cursive; */
+   font-family: 'Griffy', cursive;
+}

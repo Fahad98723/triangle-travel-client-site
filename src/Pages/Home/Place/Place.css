@@ -1,0 +1,10 @@
+.plan img {
+    height: 270px;
+    width: 100%;
+}
+.plan {
+    border: 2px solid #5B84B1FF;
+    border-radius: 5px;
+    background: #00203FFF;
+    color: white;
+}
