@@ -18,7 +18,6 @@ const MyBooking = () => {
         .then(data => setBooking(data))
     },[booking])
     const myBooking = booking.filter(book => book.email === email)
-    console.log(myBooking);
     const handleDelete = id => {
         const confirm = window.confirm('Are you sure about this?')
         if (confirm) {

@@ -15,6 +15,7 @@ import ManageAllBooking from './Pages/ManageAllBooking/ManageAllBooking';
 import Footer from './Pages/Shared/Footer/Footer';
 import AuthProvider from './Context/AuthProvider';
 import MyBooking from './Pages/MyBooking/MyBooking';
+import Contact from './Pages/Contact/Contact';
 function App() {
   return (
     <div className="body">
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route path='/login'>
               <LogIn></LogIn>
+            </Route>
+            <Route path='/contact'>
+              <Contact></Contact>
             </Route>
             <Route path='/addNewDestination'>
               <AddNewDestination></AddNewDestination>

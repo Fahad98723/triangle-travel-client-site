@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 
 const Booking = () => {
-    const {user} = useAuth()
+    const {user,setUser} = useAuth()
     const {id} = useParams()
     const [place, setPlace] = useState({})
     const history = useHistory()
@@ -16,10 +16,13 @@ const Booking = () => {
     console.log(place.name);
     const addressRef = useRef()
     const numberRef = useRef()
+    const emailRef = useRef()
+
+    
     const formHandle = e => {
         const bookUser = {
             name : user?.displayName,
-            email : user?.email,
+            email : emailRef.current.value,
             place : place?.name,
             address : addressRef.current.value,
             number : numberRef.current.value,
@@ -42,6 +45,11 @@ const Booking = () => {
                 history.push('/home')
             }
         })
+        if (!user.email) {
+            const setUserUpdate = {...user}
+            setUserUpdate.email = emailRef.current.value
+            setUser(setUserUpdate)
+        }
         e.preventDefault()
         e.target.reset()
     }
@@ -61,7 +69,7 @@ const Booking = () => {
                         {place.details}
                         </Card.Text>
                         <input  className='mb-3 w-75'  value={user?.displayName} type="text"  placeholder='Your Name' />
-                        <input  className='mb-3 w-75' value={user?.email}  type="email" placeholder='Your Number' />
+                        <input  className='mb-3 w-75' value={user?.email} ref={emailRef} type="email" placeholder='Your Email' />
                         <input ref = {addressRef} className='mb-3 w-75' required type="text"  placeholder='Your Address' />
                         <input ref={numberRef} className='mb-3 w-75' required type="number" placeholder='Your Number' />
                         <div className="book">
