@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Container, Row, Spinner } from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
-import useFirebase from '../../../Hooks/useFirebase';
 import Place from '../Place/Place';
 
 const Places = () => {
     const [places,setPlaces] = useState([])
-    const {isLoading, setIsLoading} = useAuth()
+    const {isLoading} = useAuth()
     useEffect(() => {
         fetch('http://localhost:5000/places')
         .then(res => res.json())
