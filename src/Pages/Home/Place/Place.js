@@ -13,11 +13,11 @@ const Place = ({place}) => {
         <Col lg='6'>
             <div className="plan">
                 <Row>
-                    <Col md = '5'>
+                    <Col md = '6'>
                         <img className='img-fluid' src= {image} alt="" />
                     </Col>
-                    <Col md = '7' className='d-flex align-items-center'>
-                        <div>
+                    <Col md = '6' className='d-flex align-items-center'>
+                        <div className='p-2'>
                             <h3>{name}</h3>
                             <p>{details}</p>
                             <button onClick={handleBooking} className='btn btn-danger'>Booking Now</button>

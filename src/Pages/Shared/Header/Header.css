@@ -1,13 +1,23 @@
-.navigation-bar, .footer-section{
+.navigation-bar{
     background:#FDD20EFF;
     color: #00203FFF;
 }
-
-.footer-section h3 {
-    font-family: 'Griffy', cursive;
-    font-size: 25px;
-    font-weight: 900;
+.dropdown-menu.show {
+    background: #FDD20EFF;
+    border: 1px solid black;
 }
+.dropdown-item {
+    color: rgb(43, 43, 43);
+}
+.dropdown-item:hover {
+    background: #FDD20EFF;
+    font-weight: 900;
+    font-size: 20px;
+}
+.menu a:hover{
+    color: black;
+}
+
 .navigation-bar h6 {
     color: #00203FFF;
     font-family: 'Griffy', cursive;  

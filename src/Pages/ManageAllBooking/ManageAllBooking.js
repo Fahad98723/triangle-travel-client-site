@@ -71,7 +71,7 @@ const ManageAllBooking = () => {
                         <td>{booking.place}</td>
                         <td>{booking.date}</td>
                         <td>{booking.duration} Day</td>
-                        <td>{booking.status} {booking.status === 'Pending' && <i onClick={() => handleStatus(booking._id)} className=" ms-4 fas fa-check-circle fs-4"></i>}</td>
+                        <td className='text-center'>{booking.status} {booking.status === 'Pending' && <i onClick={() => handleStatus(booking._id)} className=" ms-4 fas fa-check-circle fs-4 text-center"></i>}</td>
                         <td className="text-center"><i onClick={() => handleDelete(booking._id)} className="fas fa-trash-alt"></i></td>
                     </tr>)
                }

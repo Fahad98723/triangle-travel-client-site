@@ -48,7 +48,7 @@ const Login = () => {
         })
     }
     return (
-        <Container className= 'text-center py-5'>
+            <Container className= 'text-center py-5'>
             <div className="heading mb-5">
                 <h3>Login with your social site</h3>
                 <h1>Please log in</h1>
@@ -59,9 +59,8 @@ const Login = () => {
                 <button  onClick = {handleGoogleSignIn} className='w-100 d-flex align-items-center  btn btn-light'><h5>Sign In With Google</h5><i className="ms-2 fab fa-google fs-4"></i></button>
                 <button  onClick={handleFacebookSignIn} className='d-flex align-items-center btn btn-light mt-3'><h5>Sign In With Facebook</h5><i className="fa fa-facebook-square fs-3 ms-3"></i></button>
                 </div>
-            </div>
-            
-        </Container>
+            </div>    
+            </Container>
     );
 };
 

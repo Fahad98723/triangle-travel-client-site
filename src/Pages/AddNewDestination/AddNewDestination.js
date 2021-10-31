@@ -26,7 +26,7 @@ const AddNewDestination = () => {
         })
     };
     return (
-        <div className='py-5'>
+        <div className='py-5 '>
             <Container>
                 <div className="heading mb-5">
                     <h3>For Your Holiday</h3>

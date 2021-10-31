@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import './Footer.css'
 import img1 from '../../../images/images/img (1).jpg'
 import img2 from '../../../images/images/img (2).jpg'
 import img3 from '../../../images/images/img (3).jpg'
@@ -8,6 +9,7 @@ import img5 from '../../../images/images/img (5).jpg'
 import img6 from '../../../images/images/img (6).jpg'
 const Footer = () => {
     return (
+        <>
         <div className= 'py-5 footer-section'>
             <Container>
                 <Row>
@@ -36,30 +38,28 @@ const Footer = () => {
                         <h6>Hotels</h6>
                     </Col>
                     <Col lg='3'>
-                        <Row className='g-4'>
-                            <Col lg= '4'>
-                                <img src={img1} alt="" className="img-fluid h-75 w-100" />
-                            </Col>
-                            <Col lg= '4'>
-                                <img src={img2} alt="" className="img-fluid h-75 w-100" />
-                            </Col>
-                            <Col lg= '4'>
-                                <img src={img3} alt="" className="img-fluid h-75 w-100" />
-                            </Col>
-                            <Col lg= '4'>
-                                <img src={img4} alt="" className="img-fluid h-75 w-100" />
-                            </Col>
-                            <Col lg= '4'>
-                                <img src={img5} alt="" className="img-fluid h-75 w-100" />
-                            </Col>
-                            <Col lg= '4'>
-                                <img src={img6} alt="" className="img-fluid h-75 w-100" />
-                            </Col>
-                        </Row>
+                    <Row  className='g-0'>
+                        <Col  md='4'>
+                            <img  className = 'img-fluid w-100' src={img1} alt="" />
+                            <img  className = 'img-fluid w-100' src={img2} alt="" />
+                        </Col>
+                        <Col md='4'>
+                        <img  className = 'img-fluid w-100' src={img3} alt="" />
+                        <img  className = 'img-fluid w-100' src={img5} alt="" />
+                        </Col>
+                        <Col md='4'>
+                        <img  className = 'img-fluid w-100' src={img4} alt="" />                      
+                        <img   className = 'img-fluid w-100' src={img6} alt="" />
+                        </Col>
+                    </Row>
                     </Col>
                 </Row>
             </Container>
         </div>
+        <div className="footer text-center py-3">
+        <p>Copyright ©2021 Traingle Travel. Designed Developed By Fahad</p>
+    </div>
+    </>
     );
 };
 
