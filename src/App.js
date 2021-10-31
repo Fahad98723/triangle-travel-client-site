@@ -16,6 +16,7 @@ import Footer from './Pages/Shared/Footer/Footer';
 import AuthProvider from './Context/AuthProvider';
 import MyBooking from './Pages/MyBooking/MyBooking';
 import Contact from './Pages/Contact/Contact';
+import Destination from './Pages/Destination/Destination';
 function App() {
   return (
     <div className="body">
@@ -34,6 +35,9 @@ function App() {
             </Route>
             <Route path='/contact'>
               <Contact></Contact>
+            </Route>
+            <Route path='/destination'>
+              <Destination></Destination>
             </Route>
             <PrivateRoute path='/addNewDestination'>
               <AddNewDestination></AddNewDestination>
