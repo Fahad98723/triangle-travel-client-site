@@ -17,9 +17,14 @@ const Booking = () => {
     const addressRef = useRef()
     const numberRef = useRef()
     const emailRef = useRef()
-
+    console.log(user);
     
     const formHandle = e => {
+        // if (!user.email) {
+        //     const setUserUpdate = {...user}
+        //     setUserUpdate.email = emailRef.current.value
+        //     setUser(setUserUpdate)
+        // }
         const bookUser = {
             name : user?.displayName,
             email : emailRef.current.value,
@@ -45,11 +50,7 @@ const Booking = () => {
                 history.push('/home')
             }
         })
-        if (!user.email) {
-            const setUserUpdate = {...user}
-            setUserUpdate.email = emailRef.current.value
-            setUser(setUserUpdate)
-        }
+    
         e.preventDefault()
         e.target.reset()
     }
@@ -69,7 +70,7 @@ const Booking = () => {
                         {place.details}
                         </Card.Text>
                         <input  className='mb-3 w-75'  value={user?.displayName} type="text"  placeholder='Your Name' />
-                        <input  className='mb-3 w-75' value={user?.email} ref={emailRef} type="email" placeholder='Your Email' />
+                        <input  className='mb-3 w-75' value={user?.email} ref={emailRef} type="email" placeholder='Your Email' required />
                         <input ref = {addressRef} className='mb-3 w-75' required type="text"  placeholder='Your Address' />
                         <input ref={numberRef} className='mb-3 w-75' required type="number" placeholder='Your Number' />
                         <div className="book">
