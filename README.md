@@ -2,6 +2,8 @@
 
 ## Demo Link
 visit my site [Triangle Travel](https://travel-booking-site.web.app/).
+## Details
+This is a travel booking website where you can booking your favourite places for travelling. Book your favourite place to enjoy your travelling and hiking with us ..
 
 * ### `motivation`
 
