@@ -30,23 +30,23 @@ const Login = () => {
         })
     }
     //handle facebook signin
-    const handleFacebookSignIn = () => {
-        facebookSignIn()
-        .then(result => {
-            if (path_url) {
-                history.push(path_url)
-            }
-            else{
-                history.push('/')
-            }
-        })
-        .catch(error => {
-            setError(error.message)
-        })
-        .finally(() => {
-            setIsLoading(false)
-        })
-    }
+    // const handleFacebookSignIn = () => {
+    //     facebookSignIn()
+    //     .then(result => {
+    //         if (path_url) {
+    //             history.push(path_url)
+    //         }
+    //         else{
+    //             history.push('/')
+    //         }
+    //     })
+    //     .catch(error => {
+    //         setError(error.message)
+    //     })
+    //     .finally(() => {
+    //         setIsLoading(false)
+    //     })
+    // }
     return (
             <Container className= 'text-center py-5'>
             <div className="heading mb-5">
@@ -57,7 +57,7 @@ const Login = () => {
             <div className="d-flex justify-content-center">
                 <div>
                 <button  onClick = {handleGoogleSignIn} className='w-100 d-flex align-items-center  btn btn-light'><h5>Sign In With Google</h5><i className="ms-2 fab fa-google fs-4"></i></button>
-                <button  onClick={handleFacebookSignIn} className='d-flex align-items-center btn btn-light mt-3'><h5>Sign In With Facebook</h5><i className="fa fa-facebook-square fs-3 ms-3"></i></button>
+                {/* <button  onClick={handleFacebookSignIn} className='d-flex align-items-center btn btn-light mt-3'><h5>Sign In With Facebook</h5><i className="fa fa-facebook-square fs-3 ms-3"></i></button> */}
                 </div>
             </div>    
             </Container>
