@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Container, Row, Spinner } from 'react-bootstrap';
-import useAuth from '../../../Hooks/useAuth';
 import Place from '../Place/Place';
 
 const Places = () => {
     const [places,setPlaces] = useState([])
-    const {isLoading,setIsLoading} = useAuth()
+    const [isLoading,setIsLoading] = useState(true)
+    //all places data load from server
     useEffect(() => {
         fetch('https://warm-plateau-98820.herokuapp.com/places')
         .then(res => res.json())

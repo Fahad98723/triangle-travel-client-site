@@ -8,6 +8,7 @@ const AddNewDestination = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const history = useHistory()
+    //add new destination data send on server
     const onSubmit = data => {
         fetch('https://warm-plateau-98820.herokuapp.com/places', {
             method : 'POST',
@@ -35,12 +36,12 @@ const AddNewDestination = () => {
                     <Row>
                         <Col lg='6'>
                                 <form className="form" onSubmit={handleSubmit(onSubmit)}>
-                                <input placeholder='Place Name' {...register("name")} />
-                                <textarea placeholder='Place Details' {...register("details")} />
-                                <input placeholder='Place Image' {...register("image")} />
-                                <input placeholder='Cost' type="number" {...register("price")} />
-                                <input placeholder='Date' type="date" {...register("date")} />
-                                <input placeholder='Duration' type="number" {...register("tourTime")} />
+                                <input required placeholder='Place Name' {...register("name")} />
+                                <textarea required placeholder='Place Details' {...register("details")} />
+                                <input required placeholder='Place Image' {...register("image")} />
+                                <input required placeholder='Cost' type="number" {...register("price")} />
+                                <input required placeholder='Date' type="date" {...register("date")} />
+                                <input required placeholder='Duration' type="number" {...register("tourTime")} />
                                 <input className='btn btn-success' type="submit" value='Add New Destiantion' />
                             </form>
                         </Col>

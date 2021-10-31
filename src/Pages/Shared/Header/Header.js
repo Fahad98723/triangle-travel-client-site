@@ -20,9 +20,6 @@ const Header = () => {
                  <Nav.Link as={Link} to="/home">Home</Nav.Link>
                  {
                      user?.email || user?.displayName ? <>
-                     {/* <Nav.Link as={Link} to="/myBooking">My Booking</Nav.Link>
-                     <Nav.Link as={Link} to="/manageAllBooking">Manage All Booking</Nav.Link>
-                     <Nav.Link as={Link} to="/AddNewDestination">Add New Destination</Nav.Link>  */}
                     <Nav.Link as={Link} to="/myBooking">My Booking</Nav.Link>
                      <NavDropdown title="Admin" id="navbarScrollingDropdown">
                     <NavDropdown.Item as={Link} to="/manageAllBooking">Manage All Booking</NavDropdown.Item>

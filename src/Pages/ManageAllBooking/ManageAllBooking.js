@@ -3,11 +3,15 @@ import { Container, Table } from 'react-bootstrap';
 
 const ManageAllBooking = () => {
     const [allBooking, setAllBooking] = useState([])
+
+    //all booking data showing
     useEffect(() => {
         fetch('https://warm-plateau-98820.herokuapp.com/booking')
         .then(res => res.json())
         .then(data => setAllBooking(data))
     },[allBooking])
+
+    //data delete from database and site
     const handleDelete = (id) => {
         console.log(id);
         const confirm = window.confirm('Are you sure about this ?')
@@ -26,6 +30,7 @@ const ManageAllBooking = () => {
         }
     }
 
+    //handle status after clicking select icon
     const handleStatus = id => {
         const item = allBooking.find(i => i._id === id)
         console.log(item);

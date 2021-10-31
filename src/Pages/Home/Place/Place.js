@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import './Place.css'
 const Place = ({place}) => {
     const {name, image, details ,_id } = place
-    //sending id on the router by useParams (details button click)
+    //sending id on the router by useParams (book now button click)
     const history = useHistory()
     const handleBooking = () => {
         history.push(`/booking/${_id}`)

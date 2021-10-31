@@ -20,11 +20,14 @@ const Booking = () => {
     console.log(user);
     
     const formHandle = e => {
+
         // if (!user.email) {
         //     const setUserUpdate = {...user}
         //     setUserUpdate.email = emailRef.current.value
         //     setUser(setUserUpdate)
         // }
+
+        //Booking data saved on server 
         const bookUser = {
             name : user?.displayName,
             email : emailRef.current.value,

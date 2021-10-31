@@ -35,15 +35,15 @@ function App() {
             <Route path='/contact'>
               <Contact></Contact>
             </Route>
-            <Route path='/addNewDestination'>
+            <PrivateRoute path='/addNewDestination'>
               <AddNewDestination></AddNewDestination>
-            </Route>
-            <Route path='/manageAllBooking'>
+            </PrivateRoute>
+            <PrivateRoute path='/manageAllBooking'>
               <ManageAllBooking></ManageAllBooking>
-            </Route>
-            <Route path='/myBooking'>
+            </PrivateRoute>
+            <PrivateRoute path='/myBooking'>
               <MyBooking></MyBooking>
-            </Route>
+            </PrivateRoute>
             <PrivateRoute  path='/booking/:id'>
               <Booking></Booking>
             </PrivateRoute>

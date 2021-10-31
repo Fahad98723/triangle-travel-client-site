@@ -4,20 +4,17 @@ import useAuth from '../../Hooks/useAuth';
 const MyBooking = () => {
     const {user} = useAuth()
     const email = user?.email
-    // fetch(`https://warm-plateau-98820.herokuapp.com/booking/byEmail`, {
-    //     method : 'POST',
-    //     headers : {
-    //         'content-type' : 'application/json'
-    //     },
-    //     body : JSON.stringify(email)
-    // })
     const [booking, setBooking] = useState([])
+
+    //boking data by login gmaiil 
     useEffect(() => {
         fetch('https://warm-plateau-98820.herokuapp.com/booking')
         .then(res => res.json())
         .then(data => setBooking(data))
     },[booking])
     const myBooking = booking.filter(book => book.email === email)
+
+    //delete data from data base after clicking trash icon
     const handleDelete = id => {
         const confirm = window.confirm('Are you sure about this?')
         if (confirm) {
