@@ -57,7 +57,7 @@ const Footer = () => {
             </Container>
         </div>
         <div className="footer text-center py-3">
-        <p>Copyright ©2021 Traingle Travel. Designed Developed By Fahad</p>
+        <p>Copyright ©2021 Traingle Travel. Designed Developed By Fahad Kibria</p>
     </div>
     </>
     );
