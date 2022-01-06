@@ -63,10 +63,10 @@ const  useFirebase =  () => {
 
     //admin checking
     useEffect( () => {
-        fetch(`https://warm-plateau-98820.herokuapp.com/${user?.email}`)
+        fetch(`https://warm-plateau-98820.herokuapp.com/users/${user.email}`)
         .then(res => res.json())
         .then(data =>  setIsAdmin(data.admin))
-    },[user?.email])
+    },[user.email])
 
     return {googleSignIn,user,error, isLoading,logOut,setIsLoading,setError,setUser,facebookSignIn, saveUser,isAdmin}
 }

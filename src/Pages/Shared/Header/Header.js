@@ -11,6 +11,7 @@ const Header = () => {
     const loginHandle= () => {
         history.push('/login')
     }
+    console.log(isAdmin, user);
     return (
         <Navbar collapseOnSelect expand="lg" sticky= 'top' className='py-1s navigation-bar'>
         <Container>

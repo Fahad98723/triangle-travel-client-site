@@ -7,6 +7,7 @@ const MakeAdmin = () => {
     const handleOnBlur = e => {
         setEmail(e.target.value)
     }
+    
     //making user a admin
     const handleSubmit = e => {
         const user = {email}
