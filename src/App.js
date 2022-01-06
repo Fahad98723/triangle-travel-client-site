@@ -17,6 +17,7 @@ import AuthProvider from './Context/AuthProvider';
 import MyBooking from './Pages/MyBooking/MyBooking';
 import Contact from './Pages/Contact/Contact';
 import Destination from './Pages/Destination/Destination';
+import MakeAdmin from './Pages/MakeAdmin/MakeAdmin';
 function App() {
   return (
     <div className="body">
@@ -47,6 +48,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path='/myBooking'>
               <MyBooking></MyBooking>
+            </PrivateRoute>
+            <PrivateRoute path='/makeAdmin'>
+              <MakeAdmin></MakeAdmin>
             </PrivateRoute>
             <PrivateRoute  path='/booking/:id'>
               <Booking></Booking>

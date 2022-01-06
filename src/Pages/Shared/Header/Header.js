@@ -5,7 +5,7 @@ import useAuth from '../../../Hooks/useAuth';
 import './Header.css'
 const Header = () => {
     const history = useHistory()
-    const {user,logOut} = useAuth()
+    const {user,logOut, isAdmin} = useAuth()
 
     //login route push after click on login btn in nav bar
     const loginHandle= () => {
@@ -20,12 +20,15 @@ const Header = () => {
                  <Nav.Link as={Link} to="/home">Home</Nav.Link>
                  <Nav.Link as={Link} to="/destination">Destinations</Nav.Link>
                  {
-                     user?.email || user?.displayName ? <>
+                     user?.email && isAdmin ? <>
                     <Nav.Link as={Link} to="/myBooking">My Booking</Nav.Link>
                      <NavDropdown title="Admin" id="navbarScrollingDropdown">
                     <NavDropdown.Item as={Link} to="/manageAllBooking">Manage All Booking</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/AddNewDestination">
-                        Add New Destiantion
+                        Add New Destination
+                    </NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/MakeAdmin">
+                        Make Admin
                     </NavDropdown.Item>
                     </NavDropdown>
                       </> : ''

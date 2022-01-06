@@ -4,7 +4,7 @@ import { useLocation,useHistory} from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import './LogIn.css'
 const Login = () => {
-    const {googleSignIn,error,setError,setIsLoading,facebookSignIn} = useAuth()
+    const {googleSignIn,error,setError,setIsLoading,facebookSignIn, saveUser} = useAuth()
 
     //after login you will came where you were
     const location = useLocation()
@@ -15,6 +15,8 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
         .then(result => {
+            const user = result.user
+            saveUser(user.email, user.displayName, "PUT")
             if (path_url) {
                 history.push(path_url)
             }

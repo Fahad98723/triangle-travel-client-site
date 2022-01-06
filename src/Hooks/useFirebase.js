@@ -10,6 +10,7 @@ const  useFirebase =  () => {
     const googleProvider = new GoogleAuthProvider()
     const facebookProvider = new FacebookAuthProvider()
     const [isLoading,setIsLoading] = useState(true)
+    const [isAdmin,setIsAdmin] = useState(false)
     const [user,setUser] = useState({})
     const [error, setError] = useState('')
 
@@ -48,7 +49,26 @@ const  useFirebase =  () => {
           })
     }
 
-    return {googleSignIn,user,error, isLoading,logOut,setIsLoading,setError,setUser,facebookSignIn}
+    //saving user data
+    const saveUser = (email, name, method) => {
+        const user =  {email, name}
+        fetch('https://warm-plateau-98820.herokuapp.com/users', {
+            method : method,
+            headers : {
+                'content-type' : 'application/json'
+            },
+            body : JSON.stringify(user)
+        })
+    }
+
+    //admin checking
+    useEffect( () => {
+        fetch(`https://warm-plateau-98820.herokuapp.com/${user?.email}`)
+        .then(res => res.json())
+        .then(data =>  setIsAdmin(data.admin))
+    },[user?.email])
+
+    return {googleSignIn,user,error, isLoading,logOut,setIsLoading,setError,setUser,facebookSignIn, saveUser,isAdmin}
 }
 
 export default useFirebase
